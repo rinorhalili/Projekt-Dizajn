@@ -662,7 +662,12 @@ a:hover{
         gap: 30px;
         padding: 0 20px;
     }
-
+    .product-grid2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
     .product-card {
         background: white;
         border-radius: 12px;
@@ -945,35 +950,22 @@ a:hover{
       pointer-events: none;
     }
 
-    .stats-section {
-        background: linear-gradient(135deg, var(--primary-bg) 0%, #3a0d5e 100%);
-        padding: 60px 20px;
-        margin: 40px 0;
-    }
+        .stats-section {
+             box-shadow: #200b38 0px 4px 15px;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #3a0d5e 100%);
+             padding: 60px 20px;
+             margin: 50px 50px ;
+              border-radius: 10px;
+        
+         }
 
-    .stats-section .section-title {
-        color: white;
-        text-align: center;
-        font-size: 40px;
-        margin: 0 auto 40px;
-        padding-bottom: 15px;
-    }
-    
-    .stats-section .section-title:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: var(--accent-color);
-        margin: 15px auto 0;
-        border-radius: 2px;
-    }
+
 
         .stats-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             margin: 0 auto;
             max-width: 1200px;
             padding: 0 20px;
@@ -1012,3 +1004,210 @@ a:hover{
             opacity: 0.9;
             color: rgba(255, 255, 255, 0.9);
         }
+
+        .about-section {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #3a0d5e 100%);
+            box-shadow: #200b38 0px 4px 15px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 40px auto 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            
+        }
+        .about-image {
+            
+            max-width: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        .about-content span {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        .about-content i{
+            color: var(--text-light);
+        }
+
+        .about-container{
+            display: flex;
+            gap: 50px;
+            margin: 40px 50px;
+        }
+
+
+        
+        .team-section {
+             box-shadow: #200b38 0px 4px 15px;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #3a0d5e 100%);
+           padding: 60px 20px;
+            margin: 40px 50px;
+            border-radius: 10px;
+            margin-bottom: 100px;
+        }
+
+        .team-section h2 {
+            color: white;
+        text-align: center;
+        font-size: 40px;
+        margin: 0 auto 40px;
+        padding-bottom: 15px;
+        }
+        
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 1.5rem;
+            
+        }
+
+        .team-card {
+            width: 180px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(50px);
+        }
+
+        .team-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background:transparent 50%;
+            display: flex;     
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 40px;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+        
+
+        .team-card h3 {
+            font-size: 30px;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+
+        
+    .login-container,
+    .signup-container {
+        max-width: 500px;
+        margin: 100px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         margin-top: 150px;
+        text-align: center;
+       
+    }
+ 
+    .login-container h2,
+    .signup-container h2 {
+        margin-bottom: 20px;
+        color: var(--primary-bg);
+        font-size: 28px;
+    }
+    .form-group {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        justify-self: left;
+        margin-bottom: 10px;
+        margin-left:10px;
+        display: block;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(71, 4, 133, 0.1);
+    }
+    .form-options{
+        display:flex;
+        gap: 10px;
+        align-items:left;
+        font-size: 12px;
+    }
+    .login-btn,
+    .signup-btn {
+        width: 30%;
+        padding: 12px;
+        background: var(--primary-bg);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        transition: var(--transition);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .login-btn:hover,
+    .signup-btn:hover {
+        background: #34155c;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(32, 11, 56, 0.3);
+    }
+
+   
+
+    .login-container a,
+    .signup-container a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+   
+
+
+
