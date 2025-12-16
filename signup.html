@@ -107,3 +107,66 @@
    
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", function(ngjarja) {
+    const BtnSubmit = document.querySelector(".signup-btn"); 
+
+    const validate = (ngjarja) => {
+        ngjarja.preventDefault();
+
+        const fullname = document.getElementById('fullname');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+
+        if (fullname.value === "") {
+            alert("Ju lutem shtoni emrin e plotë.");
+            fullname.focus();
+            return false;
+        }
+
+        if (email.value === "") {
+            alert("Ju lutem shtoni email-in.");
+            email.focus();
+            return false;
+        }
+
+    
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailPattern.test(email.value)) {
+            alert("Ju lutem vendosni një email valid.");
+            email.focus();
+            return false;
+        }
+
+        if (password.value === "") {
+            alert("Ju lutem shtoni fjalëkalimin.");
+            password.focus();
+            return false;
+        }
+
+        if (password.value.length < 6) {
+            alert("Fjalëkalimi duhet të ketë të paktën 6 karaktere.");
+            password.focus();
+            return false;
+        }
+
+        if (confirmPassword.value === "") {
+            alert("Ju lutem konfirmoni fjalëkalimin.");
+            confirmPassword.focus();
+            return false;
+        }
+
+        if (password.value !== confirmPassword.value) {
+            alert("Fjalëkalimet nuk përputhen.");
+            confirmPassword.focus();
+            return false;
+        }
+
+        alert("Regjistrimi u krye me sukses!");
+        document.querySelector("form").reset();
+    };
+
+    BtnSubmit.addEventListener("click", validate);
+});
+</script>

@@ -85,3 +85,64 @@
 
 </body>
 </html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const BtnSend = document.querySelector(".app-form-button:last-child"); 
+
+    const validateContact = (ngjarja) => {
+        ngjarja.preventDefault();
+
+        const inputs = document.querySelectorAll(".app-form-control");
+        const name = inputs[0];
+        const email = inputs[1];
+        const contactNo = inputs[2];
+        const message = inputs[3];
+
+        if (name.value === "") {
+            alert("Ju lutem shtoni emrin.");
+            name.focus();
+            return false;
+        }
+
+        if (email.value === "") {
+            alert("Ju lutem shtoni email-in.");
+            email.focus();
+            return false;
+        }
+
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailPattern.test(email.value)) {
+            alert("Ju lutem vendosni një email valid.");
+            email.focus();
+            return false;
+        }
+
+        if (contactNo.value === "") {
+            alert("Ju lutem shtoni numrin e kontaktit.");
+            contactNo.focus();
+            return false;
+        }
+
+        let phonePattern = /^[0-9]+$/;
+        if (!phonePattern.test(contactNo.value)) {
+            alert("Numri i kontaktit duhet të përmbajë vetëm shifra!");
+            contactNo.focus();
+            return false;
+        }
+
+        if (message.value === "") {
+            alert("Ju lutem shtoni mesazhin.");
+            message.focus();
+            return false;
+        }
+
+        alert("Mesazhi u dërgua me sukses!");
+        inputs.forEach(input => input.value = "");
+    };
+
+    BtnSend.addEventListener("click", validateContact);
+});
+
+</script>

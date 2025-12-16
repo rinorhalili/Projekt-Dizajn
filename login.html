@@ -110,3 +110,41 @@
    
 </body>
 </html>    
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const BtnLogin = document.querySelector(".login-btn"); 
+
+    const validateLogin = (ngjarja) => {
+        ngjarja.preventDefault();
+
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        if (email.value === "") {
+            alert("Ju lutem shtoni email-in.");
+            email.focus();
+            return false;
+        }
+
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailPattern.test(email.value)) {
+            alert("Ju lutem vendosni një email valid.");
+            email.focus();
+            return false;
+        }
+
+        if (password.value === "") {
+            alert("Ju lutem shtoni fjalëkalimin.");
+            password.focus();
+            return false;
+        }
+
+        alert("Login me sukses!");
+        document.querySelector("form").reset();
+    };
+
+    BtnLogin.addEventListener("click", validateLogin);
+});
+
+</script>
